@@ -10,8 +10,38 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: Row(
+        children: [
+          Expanded(child: HomePage()),
+          StlSection(),
+        ],
+      ),
     );
+  }
+}
+
+class StlSection extends StatelessWidget {
+  const StlSection({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.green,
+      child: Column(
+        children: [
+          Text("CComponent"),
+          Expanded(
+            child: Align(
+              child: Text(
+                "stl",
+                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+    ;
   }
 }
 
